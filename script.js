@@ -21,6 +21,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
             alert('Champs incorrect');
         } else {
 
+// La fonction create element permer de creer un nouvel element et appendChild ou removeChild pour ajouter ou retirer
+// cet element a une div
 
             // TACHE
             var paragraph = document.createElement('p');
@@ -65,10 +67,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
     // BOUTON REINITIALISER LES TACHES
-    reset.addEventListener('click', function(){
-        inputField.value= "";
-         date.value = "";
-         categorie.value = "";
+    reset.addEventListener('click', function () {
+        inputField.value = "";
+        date.value = "";
+        categorie.value = "";
         deleteall();
     })
 })
