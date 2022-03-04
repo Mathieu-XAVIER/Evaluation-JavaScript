@@ -27,6 +27,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             paragraph.classList.add('paragraph-styling');
             paragraph.innerText = inputField.value;
             taskContainer.appendChild(paragraph);
+            inputField.value = "";
 
 
             paragraph.addEventListener('click', function () {
@@ -38,12 +39,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
             cate.classList.add('paragraph-styling');
             cate.innerText = categorie.value;
             catContainer.appendChild(cate);
+            categorie.value = "";
 
             // DATE
             var paragraphe = document.createElement('p');
             paragraphe.classList.add('paragraph-styling');
             paragraphe.innerText = date.value;
             dateContainer.appendChild(paragraphe);
+            date.value = "";
 
             // BOUTON RETIRER LES TACHES
             var btn = document.createElement('p');
@@ -51,7 +54,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             btn.innerText = "Retirer la tache";
             deleteContainer.appendChild(btn);
 
-            btn.addEventListener('click', function () {
+            btn.addEventListener('click', function (deleteall) {
                 taskContainer.removeChild(paragraph);
                 dateContainer.removeChild(paragraphe);
                 catContainer.removeChild(cate);
@@ -62,7 +65,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
     // BOUTON REINITIALISER LES TACHES
-    reset.addEventListener('click', function () {
-        location.reload();
+    reset.addEventListener('click', function(){
+        inputField.value= "";
+         date.value = "";
+         categorie.value = "";
+        deleteall();
     })
 })
